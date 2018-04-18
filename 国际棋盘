@@ -1,0 +1,42 @@
+import javax.swing.*;
+import java.awt.*;
+
+public class imgfour {
+    public static void main(String[] args){
+//        生成窗口
+        JFrame f =new JFrame("国际象棋棋盘");
+//        加标签
+//        JLabel l =new JLabel();
+//        f.add(l);
+//        窗口设置大小
+        f.setSize(175,200);
+//        窗口设置位置
+        Point point=new Point(350,200);
+        f.setLocation(point);
+//        设置小窗口规格
+        int grid=8;
+        int gridsize=20;
+//        放置
+        for (int i=0;i<grid;i++){
+            for (int j=0;j<grid;j++){
+                JLabel L=new JLabel();
+                L.setSize(gridsize,gridsize);
+                L.setLocation(i*gridsize,j*gridsize);
+                if ((i+j)%2==0){
+//                    根据是否为偶数判断什么颜色
+                    L.setBackground(Color.BLACK);
+                    L.setOpaque(true);
+                }
+                else {
+                    L.setBackground(Color.white);
+                    L.setOpaque(true);
+                }
+//                边界设置为黑色
+                L.setBorder(BorderFactory.createLineBorder(Color.CYAN));
+                f.add(L);
+            }
+
+        }
+        f.setVisible(true);
+    }
+}
