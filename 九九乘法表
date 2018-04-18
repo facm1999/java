@@ -1,0 +1,15 @@
+public class imgtwo {
+    public static void main(String[] args){
+//        先设置出整数变量
+        int a,b;
+//        记得第一个循环要包含的部分{ }
+        for (a=1;a<=9;a++){
+//            控制行数同时其为乘法前面那位数
+            for (b=1;b<=a;b++)
+                System.out.print(" "+a+"*"+b+"="+(a*b));
+//            结束一行，换行
+        System.out.printf("\n");}
+
+
+    }
+}
