@@ -1,0 +1,37 @@
+import java.util.Scanner;
+
+public class imgthree {
+    public static void main(String[] args){
+        System.out.print("请输入行数");
+        Scanner input=new Scanner(System.in);
+        int num=input.nextInt();
+        int [][] ary=Triangle(num);
+        print(ary);
+    }
+
+    private static int[] [] Triangle(int num) {
+        int[][] array=new int[num][num];
+//        先写边界上的1
+        for(int i=0;i<array.length;i++){
+            array[i][0]=1;
+            array[i][i]=1;
+//            再写里面的值
+        for(int j=1;j<array.length;j++){
+            for(int k=1;k<=j;k++){
+                array[j][k]=array[j-1][k-1]+array[j-1][k];
+            }
+
+        }
+        }
+        return array;
+    }
+//    建立print方法把二维数组打印出来
+    private static void print(int[][] ary){
+        for(int i=0;i<ary.length;i++){
+            for(int j=0;j<=i;j++){
+                System.out.printf("%-3d",ary[i][j]);
+            }
+            System.out.println();
+        }
+    }
+}
