@@ -1,0 +1,37 @@
+import javax.swing.*;
+import java.awt.*;
+
+public class imgfive extends JFrame {
+//  将width，height写成不可变
+    private static final int width = 480;
+    private static final int height = 600;
+
+    public imgfive() {
+        super("心形线");
+        this.setBackground(Color.BLACK);
+        this.setSize(470, 500);
+        this.setLocation(300, 400);
+        this.setVisible(true);
+    }
+
+    public void paint(Graphics g) {
+        double x, y, a;
+        Image image = this.createImage(width, 800);
+        Graphics g1 = image.getGraphics();
+        for (int i = 0; i <= 90; i++) {
+            for (int j = 0; j <= 90; j++) {
+//                不懂。。。。
+                a = Math.PI / 45 + Math.PI / 45 * i * (1 - Math.sin(Math.PI / 45 * j)) * 24;
+                x = a * Math.cos(Math.PI / 45 * j) * Math.sin(Math.PI / 45 * i) + width / 2;
+                y = -a * Math.sin(Math.PI / 45 * j)+height/2;
+                g1.setColor(Color.red);
+                g1.fillOval((int) x, (int) y, 2, 2);
+            }
+//            这里是g！，是Graphics这个对象！！！
+            g.drawImage(image, 0, -150, this);
+        }
+    }
+    public static void main(String[] args){
+        new imgfive();
+    }
+}
