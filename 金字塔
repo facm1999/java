@@ -1,0 +1,20 @@
+import java.util.Scanner;
+
+public class imgone {
+    public static void main(String[] args){
+        int i,k,l,m;
+        char [] s={'捶','爆','狗','子','的','头'};
+        Scanner input=new Scanner(System.in);
+        System.out.println("请输入层数:");
+        m=input.nextInt();//获取输入的层数
+        for(i=1;i<=m;i++){
+//            依次循环输出金字塔的空格和字符
+            for (k=1;k<=(m-i);k++)
+                System.out.print(' ');
+            for (l=1;l<=2*i-1;l++)
+                System.out.print(s[i-1]);
+//            完成第一行
+            System.out.print("\n");
+        }
+    }
+}
