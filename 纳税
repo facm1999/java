@@ -1,0 +1,40 @@
+public class math3 {
+    public static void main(String[] args){
+        int[] salary={0,500,2000,5000,20000,40000,60000,80000,100000};
+        int[] rate={0,5,10,15,20,25,30,35,40,45};
+        Scanner input=new Scanner(System.in);
+        System.out.println("请输入你的工资");
+//        这里如果用整数型太大的数不行。。。。
+        double s=input.nextDouble();
+        s=s-3500;
+        int index=0;
+        for(int i=0;i<salary.length;i++){
+            if (s<salary[i]){
+                index=i;
+                break;}
+            if (s>=100000){
+                index=8;
+                break;
+            }
+        }
+        System.out.println("纳税级别:"+index);
+        double sum=0;
+//        计算每级的税
+        if (index !=0&&index !=8){
+            for(int n=0;n<index-1;n++) {
+                sum = sum + (double) ((salary[n + 1] - salary[n]) * rate[n] * 0.01);
+            }
+//    计算总的税
+        sum=sum+(double)((s-salary[index-1])*rate[index]*0.01);
+        }
+        if (index==0){
+            sum=sum;
+        }
+        if (index==8){
+            for(int n=0;n<=index-1;n++){
+                sum=sum+(double)((salary[n+1]-salary[n])*rate[n]*0.01);
+            }
+        sum=sum+(double)((s-100000)*rate[index]*0.01);}
+        System.out.println("总共应缴纳的税为:"+sum);
+    }
+}
