@@ -1,0 +1,16 @@
+1.
+public class math0 {
+    int score;
+    public int getScore(){
+        return score;
+    }
+}
+class test{
+    public static void main(String[] args){
+        math0 s=new math0();
+        System.out.println("score:"+s.getScore());
+    }
+}
+（1）：为什么getscore无参数能直接用int score（int score 未給值时返回0）？
+(2)：为什么将getscore设置成有参数就是以参数输出？
+（3）：return this.score将返回int score....
