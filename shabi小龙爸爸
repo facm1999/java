@@ -1,0 +1,17 @@
+public class math4 {
+    //让money不可变
+    public static final double moneyrate=0.0171;
+    public static void main(String[] args)
+    {
+        double[] money=new double[48];
+        money[47]=1000;
+        System.out.printf("48月初的剩余存款数为：%.2f\n",money[47]);
+        //迭代输出
+        for(int i=47;i>0;i--){
+            money[i-1]=1000+money[i]/(1+moneyrate/12);
+            System.out.printf("%d月初的剩余存款数为：%.2f\n",i,money[i-1]);
+        }
+        //在输出一遍
+        System.out.printf("\n最初要存入%.2f元.",money[0]);
+    }
+}
