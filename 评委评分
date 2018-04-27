@@ -1,0 +1,18 @@
+import java.util.Scanner;
+
+public class math5 {
+    public static void main(String[] args){
+        int max=0,min=100,i,sum=0;
+        int[] x=new int[10];
+        for(i=0;i<10;i++){
+            System.out.println("请输入第"+(i+1)+"位评委的得分");
+            Scanner input=new Scanner(System.in);
+            int a=input.nextInt();
+            x[i]=a;
+            if(x[i]>max){max=x[i];}
+            if(x[i]<min){min=x[i];}
+            sum=sum+x[i];}
+        System.out.println("去掉一个最高和一个最低分："+max+","+min);
+        System.out.println("最后的平均分为："+(sum-max-min)/8);
+    }
+}
