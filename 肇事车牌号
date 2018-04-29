@@ -1,0 +1,24 @@
+public class math6 {
+    public static void main(String[] args){
+        int i,j;
+ //这里以1100开始即可
+        for(i=1;i<=9;i++){
+            for(j=0;j<=9;j++){
+                if(i!=j){
+ //定义方法寻找                   
+                    findhaoma(i,j);
+                }
+            }
+        }
+    }
+
+    private static void findhaoma(int i, int j) {
+        int t,m;
+        t=1000*i+100*i+10*j+j;
+        for(m=30;m<=100;m++){
+            if(m==Math.sqrt(t)){
+                System.out.println("肇事号码为："+t);
+            }
+        }
+    }
+}
