@@ -1,0 +1,26 @@
+public class math9 {
+    public static void main(String[] args){
+        int[][] fishman=new int[3][3];
+        int m,n,k;
+        System.out.println("可能的分配结果：");
+        for(m=1;m<=3;m++){
+            fishman[0][0]=m;
+            fishman[0][1]=(int)((3.5-m)/0.5);
+            fishman[0][2]=(int)(7-fishman[0][0]-fishman[0][1]);
+            for(n=1;n<=3;n++){
+                fishman[1][0]=n;
+                fishman[1][1]=(int)((3.5-n)/0.5);
+                fishman[1][2]=(int)(7-fishman[1][0]-fishman[1][1]);
+                for(k=1;k<=3;k++){
+                    fishman[2][0]=k;
+                    fishman[2][1]=(int)((3.5-k)/0.5);
+                    fishman[2][2]=(int)(7-fishman[2][0]-fishman[2][1]);
+                    if(m+n+k==7&&(fishman[0][1]+fishman[1][1]+fishman[2][1]==7)&&(fishman[0][2]+fishman[1][2]+fishman[2][2]==7)){
+                        System.out.println("         "+"满筐数"+" "+"半筐数"+" "+"空筐数");
+                        for(int i=0;i<3;i++){
+                            System.out.println("第"+(i+1)+"位渔夫："+"  "+fishman[i][0]+"    "+fishman[i][1]+"    "+fishman[i][2]);
+                        }
+                        System.out.println("------------------------------------------------------------------------");
+                    }
+                }
+            }
