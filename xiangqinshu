@@ -1,0 +1,32 @@
+public class integer4 {
+    public static void main(String[] args){
+        run(2,100000);
+    }
+
+    private static void run(int from, int to) {
+        int count=0;
+        for(int num=from;num<=to;num++){
+            int num1=getsum(num);
+            if (num1>num){
+                int num2=getsum(num1);
+                if (num2==num){
+                    System.out.println(num1+"和"+num+"是一组相亲数");
+                    count++;
+                }
+            }
+            }
+        System.out.println("共有"+count+"组相亲数");
+    }
+
+    private static int getsum(int num) {
+        int i=1;
+        int limit=(int)Math.sqrt(num);
+//通过开平方来用前一半；；
+        for(int k=2;k<=limit;k++){
+            if(num%k==0){
+                i=i+k+num/k;
+                }
+        }
+        return i;
+        }
+}
